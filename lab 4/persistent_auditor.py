@@ -42,7 +42,10 @@ def load_inventory():
     except FileNotFoundError:
         return 0, []
 
-
+def save_inventory(total, history):
+    with open("inventory.txt", "w") as file:
+        file.write(f"{total}\n")
+        file.write(",".join(str(value) for value in history))
 
 def main():
     inventory, history = load_inventory()
@@ -70,6 +73,7 @@ def main():
             print("Inventory limit reached. Cannot add more stock.")
             break
 
+    save_inventory(inventory, history)
     generate_report(inventory, deliveries_processed, failed_entries)
 
 
