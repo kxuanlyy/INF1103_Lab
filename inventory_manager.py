@@ -13,5 +13,19 @@ def sample_products():
     ]
 
 
+def load_inventory():
+    if os.path.exists(FILE_PATH):
+        print("inventory.json found.")
+        try:
+            with open(FILE_PATH, "r") as file:
+                inventory = json.load(file)
+            print("Inventory loaded successfully.")
+            return inventory
+        except (json.JSONDecodeError, OSError):
+            print("Could not read inventory.json. Starting with an empty inventory.")
+            return []
+    print("inventory.json not found. Starting with an empty inventory.")
+    return []
+
 if __name__ == "__main__":
-    print(sample_products())
+    print(load_inventory())
