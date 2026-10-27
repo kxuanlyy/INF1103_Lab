@@ -9,7 +9,7 @@
         "id": "P002",
         "name": "Mouse",
         "price": 25.5,
-        "stock": 40
+        "stock": 99
     },
     {
         "id": "P003",
@@ -22,5 +22,17 @@
         "name": "Monitor",
         "price": 299.99,
         "stock": 10
+    },
+    {
+        "id": "P005",
+        "name": "Headphone",
+        "price": 100.0,
+        "stock": 5
+    },
+    {
+        "id": "P006",
+        "name": "Laptop Stand",
+        "price": 49.99,
+        "stock": 300
     }
 ]

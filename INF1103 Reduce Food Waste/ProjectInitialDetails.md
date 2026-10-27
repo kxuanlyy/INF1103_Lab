@@ -155,10 +155,13 @@ The team repository requirements are:
 | Requirement | Project detail |
 |---|---|
 | GitHub repository URL | [INF1103-LAB-P6-P8](https://github.com/kxuanlyy/INF1103-LAB-P6-P8) |
+<<<<<<< HEAD
 | Repository setup | One team member creates the repository and adds all team members and lab-in-charges as collaborators. |
 | Team access | All team members clone the shared repository. |
 | Initial details file | Create `ProjectInitialDetails.md`, then commit and push it to the repository. |
 | Branch practice | Use `main` for stable work and descriptive feature branches for development. |
+=======
+>>>>>>> 0f81dd20b1372f12e91dbfbc495f764b21ab0140
 
 ### Implementation details
 
@@ -174,21 +177,6 @@ The team repository requirements are:
 - **Data manager:** Saving, loading, filtering, and error handling
 - **Testing and documentation:** Test cases, report writing, and demonstration script
 - **DevOps and Git:** Docker setup, branch management, and repository verification
-
-### Git and Docker expectations
-
-- Start from an up-to-date `main` branch.
-- Use descriptive, short-lived feature branches.
-- Commit early and often with meaningful messages.
-- Keep the main branch stable.
-- Test Docker on every team member's laptop.
-
-Example Docker commands:
-
-```bash
-docker build -t foodrescue-ai .
-docker run --rm foodrescue-ai
-```
 
 ## Definition of Done
 
