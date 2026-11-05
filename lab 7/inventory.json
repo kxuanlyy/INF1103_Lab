@@ -1,0 +1,18 @@
+[
+    {
+        "id": "P001",
+        "name": "Laptop",
+        "price": 1200.0,
+        "stock": 15,
+        "type": "physical",
+        "weight": 2.0
+    },
+    {
+        "id": "D001",
+        "name": "Python Course",
+        "price": 49.99,
+        "stock": 999,
+        "type": "digital",
+        "download_size": 4500.0
+    }
+]

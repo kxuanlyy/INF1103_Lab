@@ -16,3 +16,9 @@ class PhysicalProduct(Product, CanBeShipped):
 
     def calculate_shipping_cost(self):
         return round(self.__weight * 2.5, 2)   # $2.50 per kg
+
+    def to_dict(self):
+        data = super().to_dict()       # gets {"id", "name", "price", "stock"}
+        data["type"] = "physical"
+        data["weight"] = self.__weight
+        return data
