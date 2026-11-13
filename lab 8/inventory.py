@@ -1,17 +1,27 @@
-class Inventory:
-    def __init__(self):
-        self.__products = []
+from __future__ import annotations
+from product import Product
 
-    def add_product(self, product):
+
+class Inventory:
+    def __init__(self) -> None:
+        self.__products: list[Product] = []
+
+    def add_product(self, product: Product) -> None:
         self.__products.append(product)
 
-    def search_product(self, product_id):
+    def remove_product(self, product_id: str) -> None:
+        self.__products = [
+            p for p in self.__products
+            if p.get_product_id().upper() != product_id.upper()
+        ]
+
+    def find_product(self, product_id: str) -> Product | None:
         for product in self.__products:
             if product.get_product_id().upper() == product_id.upper():
                 return product
         return None
 
-    def display_all(self):
+    def display_all(self) -> None:
         print("\nCurrent Inventory")
         print("-" * 48)
         if not self.__products:
@@ -20,22 +30,5 @@ class Inventory:
             product.display_information()
         print("-" * 48)
 
-    def get_products(self):
+    def get_products(self) -> list[Product]:
         return self.__products
-
-
-if __name__ == "__main__":
-    from product import Product
-
-    inventory = Inventory()
-    inventory.add_product(Product("P001", "Laptop", 1200.00, 15))
-    inventory.add_product(Product("P002", "Mouse", 25.50, 40))
-
-    inventory.display_all()
-
-    found = inventory.search_product("p002")
-    if found:
-        found.update_stock(99)
-    inventory.display_all()
-
-    print(inventory.search_product("P999"))
